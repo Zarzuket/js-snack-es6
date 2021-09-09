@@ -26,15 +26,20 @@ const soccerTeam =[
 
 // funzione genera numero casuale
 const randomNumer = (min,max) => Math.floor(Math.random() * (max - min) ) + min;
-
+const newSoccerTeam = [];
 // ciclo per generare puntiFatti e falliSubiti in maniera casuale
+// e pusha solo i nomi e i falli subiti nel nuovo array
 for (let i = 0; i < soccerTeam.length; i++){
     soccerTeam[i].pF = randomNumer(1,100);
     soccerTeam[i].fS = randomNumer(1,100);
-    // let {nome , fS} = soccerTeam[i];
-    // console.log(nome , fS);
+    let thisTeam = soccerTeam[i];
+    const {nome , fS} = thisTeam;
+    newSoccerTeam.push({nome,fS});
 }
 
 console.log(soccerTeam);
+console.log(newSoccerTeam);
+
+
 
 
